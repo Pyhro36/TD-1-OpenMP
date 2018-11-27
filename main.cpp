@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 
     if(argc < 3)
     {
-    	std::cout<<"usage : app [number of cores] [array size]"<<std::endl;
+    	std::cout<<"usage : app_name number_of_cores array_size"<<std::endl;
     }
     else
     {
@@ -41,8 +41,8 @@ int main(int argc, char **argv)
         vector2[i] = rand();
     }
 
-    // display(vector1, nbMax);
-    // display(vector2, nbMax);
+    display(vector1, nbMax);
+    display(vector2, nbMax);
     
     int *result = new int[nbMax];
 
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
     nanoseconds time_duration = duration_cast<nanoseconds>(end - start);
     std::cout << "Vector1 + Vector2 Duration : " << std::endl << time_duration.count() << std::endl;
     std::cout << "Addition result : " << std::endl;
-    // display(result, nbMax);
+    display(result, nbMax);
     delete[] result;
 
     high_resolution_clock::time_point sumStart = high_resolution_clock::now();
@@ -60,7 +60,7 @@ int main(int argc, char **argv)
     high_resolution_clock::time_point sumEnd = high_resolution_clock::now();
     time_duration = duration_cast<nanoseconds>(sumEnd - sumStart);
     std::cout << "Vector1 Sum Duration : " << std::endl << time_duration.count() << std::endl;
-    // std::cout << "Vector 1 sum result : " << sumResult << std::endl;
+    std::cout << "Vector 1 sum result : " << sumResult << std::endl;
     
     double *productResult = new double[nbMax];
     double factor = (((double)rand()) / RAND_MAX) * 1000;
