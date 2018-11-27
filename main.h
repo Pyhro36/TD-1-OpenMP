@@ -2,9 +2,19 @@
 #define MAIN_H
 
 /**
- * Affichage des termes d'un vecteur
+ * Affichage des termes d'un vecteur de int
  */
-void display(int *vec, int length);
+void displayInt(int *vec, int length);
+
+/**
+ * Affichage des termes d'un vecteur de long
+ */
+void displayLong(long *vec, int length);
+
+/**
+ * Affichage des termes d'un vecteur de double
+ */
+void displayDouble(double *vec, int length);
 
 /**
  * Somme des termes d'un vecteur
@@ -14,7 +24,7 @@ long sum(int *vec, int length);
 /**
  * Somme de deux vecteurs, le vecteur ret doit etre initialise pour recevoir le resultat
  */
-void add(int *vec1, int *vec2, int *ret, int length);
+void add(int *vec1, int *vec2, long *ret, int length);
 
 /**
  * Produit d'un vecteur par un double, le vecteur ret doit etre initialise pour recevoir le resultat
