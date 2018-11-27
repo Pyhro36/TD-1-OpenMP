@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef MAIN_VECT_H
+#define MAIN_VECT_H
 
 /**
  * Affichage des termes d'un vecteur de int
@@ -31,4 +31,4 @@ void add(int *vec1, int *vec2, long *ret, int length);
  */ 
 void product(int *vec, double factor, double *ret, int length);
 
-#endif // MAIN_H
+#endif // MAIN_VECT_H

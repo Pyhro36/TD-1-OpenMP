@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main_vect.h"
 
 #include <iostream>
 #include <chrono>
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
     	nbMax = std::stoi(argv[2]);
     }
 
-    // omp_set_num_threads(nbCore);
+    omp_set_num_threads(nbCore);
     
     // NB_MAX will be used as an arg
     int *vector1 = new int[nbMax];
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 
 	// somme des termes du premier vecteur
     high_resolution_clock::time_point sumStart = high_resolution_clock::now();
-    int sumResult = sum(vector1, nbMax);
+    long sumResult = sum(vector1, nbMax);
     high_resolution_clock::time_point sumEnd = high_resolution_clock::now();
     time_duration = duration_cast<nanoseconds>(sumEnd - sumStart);
     std::cout << time_duration.count() << ",";

@@ -7,7 +7,12 @@ sumProductTime=0
 OLDIFS="$IFS"
 IFS=","
 
-echo "Addition de deux vecteurs, Somme des termes d'un vecteur, Produit d'un vecteur par un scalaire" > $3
+printf "Temps avec " > $3
+printf $1 >> $3
+printf " coeur(s) et des vecteurs de " >> $3
+printf $2 >> $3
+echo " termes" >> $3  
+echo "Addition de deux vecteurs, Somme des termes d'un vecteur, Produit d'un vecteur par un scalaire" >> $3
 
 for ((i=0 ; iterations - $i ; i++))
 do
