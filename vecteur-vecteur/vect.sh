@@ -1,3 +1,4 @@
+#!/bin/bash
 
 iterations=10
 sumAddTime=0
