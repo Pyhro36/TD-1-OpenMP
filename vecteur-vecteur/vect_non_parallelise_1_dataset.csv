@@ -1,4 +1,4 @@
-Temps avec 1 coeur(s) et des vecteurs de 100000000 termes
+Temps non parallélisé avec des vecteurs de 100000000 termes,,
 Addition de deux vecteurs, Somme des termes d'un vecteur, Produit d'un vecteur par un scalaire
 652412075,288966472,645433374
 669146410,284764197,651378080
@@ -10,5 +10,5 @@ Addition de deux vecteurs, Somme des termes d'un vecteur, Produit d'un vecteur p
 656006374,284802953,641047447
 651326651,284815786,638070249
 654909001,284819058,640028445
-Moyenne : 
+Moyenne : ,,
 655058308.4,285235055.4,640870684.3
