@@ -1,4 +1,4 @@
-#include "main_vect.h"
+#include "main_mat_vect.h"
 
 #include <iostream>
 #include <chrono>
@@ -14,20 +14,21 @@ int main(int argc, char **argv)
 {
     int i;
 
-    int nbCore = 1;
-    int nbMax;
+    int coresNb = 1;
+    int columnsNb, linesNb;
 
-    if(argc < 3)
+    if(argc < 4)
     {
     	std::cout<<"usage : app_name number_of_cores array_size"<<std::endl;
     }
     else
     {
-	    nbCore = std::stoi(argv[1]);
-    	nbMax = std::stoi(argv[2]);
+	    coresNb = std::stoi(argv[1]);
+    	columnsNb = std::stoi(argv[2]);
+    	linesNb = std::stoi(argv[3]);
     }
 
-    // omp_set_num_threads(nbCore);
+    // omp_set_num_threads(coresNb);
     
     int *vector1 = new int[nbMax];
     int *vector2 = new int[nbMax];
