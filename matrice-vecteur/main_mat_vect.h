@@ -12,23 +12,23 @@ void displayInt(int *vec, int length);
 void displayLong(long *vec, int length);
 
 /**
- * Affichage des termes d'un vecteur de double
+ * Affichage des termes d'une matrice de int
  */
-void displayDouble(double *vec, int length);
+void displayIntMat(int **mat, int width, int height);
 
 /**
- * Somme des termes d'un vecteur
+ * Affichage des termes d'une matrice de long
  */
-long sum(int *vec, int length);
+void displayLongMat(long **mat, int width, int height);
 
 /**
- * Somme de deux vecteurs, le vecteur ret doit etre initialise pour recevoir le resultat
- */
-void add(int *vec1, int *vec2, long *ret, int length);
-
-/**
- * Produit d'un vecteur par un double, le vecteur ret doit etre initialise pour recevoir le resultat
+ * Produit d'un vecteur ligne par une matrice, le vecteur ret doit etre initialise pour recevoir le resultat
  */ 
-void product(int *vec, double factor, double *ret, int length);
+void productLineVectMat(int *vec, int **mat, long *ret, int width, int height);
+
+/**
+ * Produit d'une matrice par un vecteur colonne, le vecteur ret doit etre initialise pour recevoir le resultat
+ */
+void productMatColumnVect(int **mat, int *vec, long *ret, int width, int height);
 
 #endif // MAIN_MAT_VECT_H

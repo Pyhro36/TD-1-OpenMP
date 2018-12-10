@@ -28,10 +28,12 @@ int main(int argc, char **argv)
     }
 
     // omp_set_num_threads(nbCore);
-    
+
+    // instanciation des vecteurs
     int *vector1 = new int[nbMax];
     int *vector2 = new int[nbMax];
 
+    // remplissage des vecteurs
     srand(time(NULL));
 
     for (i = 0; i < nbMax; i++)
@@ -68,9 +70,9 @@ int main(int argc, char **argv)
     high_resolution_clock::time_point prodEnd = high_resolution_clock::now();
     time_duration = duration_cast<nanoseconds>(prodEnd - prodStart);
     std::cout << time_duration.count() << std::endl;
-    
     delete[] productResult;
-   
+
+    // liberation memoire
     delete[] vector1;
     delete[] vector2;
 
