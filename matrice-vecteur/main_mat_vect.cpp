@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 
     if (argc < 4)
     {
-    	std::cout << "usage : app_name number_of_cores array_size" << std::endl;
+    	std::cout << "usage : app_name number_of_cores width height" << std::endl;
     }
     else
     {
@@ -139,37 +139,14 @@ void productLineVectMat(int *vec, int **mat, long *ret, int width, int height)
 {
     int i, j;
 
-    //// Cette parallelisation n'est pas bonne, elle provoque un Segmentation fault
-/*
-    #pragma omp parallel shared(ret, vec, mat, width, height) private(i, j)
+    #pragma omp parallel for shared(ret, vec, mat, width, height) private(i, j)
+    for (i = 0; i < height; i++)
     {
-        #pragma omp for
-        for (i = 0; i < height; i++)
+        ret[i] = 0;
+        #pragma omp parallel for reduction(+:ret[i])
+        for (j = 0; j < width; j++)
         {
-            ret[i] = 0;
-        }
-
-        #pragma omp for collapse(2) reduction(+:ret[i])
-        for (i = 0; i < height; i++)
-        {
-            for (j = 0; j < width; j++)
-            {
-                ret[i] += vec[j] * mat[j][i];
-            }
-        }
-    }
-*/
-    //// Voici la solution simplifiée proposée
-    #pragma omp parallel shared(ret, vec, mat, width, height) private(i, j)
-    {
-        #pragma omp for
-        for (i = 0; i < height; i++)
-        {
-            ret[i] = 0;
-            for (j = 0; j < width; j++)
-            {
-                ret[i] += vec[j] * mat[j][i];
-            }
+            ret[i] += vec[j] * mat[j][i];
         }
     }
 }
