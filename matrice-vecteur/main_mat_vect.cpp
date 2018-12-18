@@ -27,7 +27,7 @@ int main(int argc, char **argv)
     width = std::stoi(argv[2]);
     height = std::stoi(argv[3]);
 
-     omp_set_num_threads(coresNb);
+     // omp_set_num_threads(coresNb);
 
     // instanciation des matrice et vecteurs
     int *lineVector = new int[width];

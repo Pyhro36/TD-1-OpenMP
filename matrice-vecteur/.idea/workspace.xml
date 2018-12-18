@@ -10,9 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="310a9385-097a-4ce4-9263-0d8b37104539" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_mat_vect.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main_mat_vect.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vect_mat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vect_mat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resultats et graphes.ods" beforeDir="false" afterPath="$PROJECT_DIR$/resultats et graphes.ods" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,20 +24,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_mat_vect.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="210">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vect_mat.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="360">
+              <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -55,6 +57,7 @@
     <findStrings>
       <find>columnsNb</find>
       <find>linesNb</find>
+      <find>sumProductMatColumnVectTime</find>
     </findStrings>
     <replaceStrings>
       <replace>height</replace>
@@ -71,8 +74,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/main_mat_vect.h" />
-        <option value="$PROJECT_DIR$/main_mat_vect.cpp" />
         <option value="$PROJECT_DIR$/vect_mat.sh" />
+        <option value="$PROJECT_DIR$/main_mat_vect.cpp" />
       </list>
     </option>
   </component>
@@ -134,12 +137,12 @@
       <workItem from="1544432163452" duration="6559000" />
       <workItem from="1544447027348" duration="16322000" />
       <workItem from="1545117624262" duration="3011000" />
-      <workItem from="1545120720435" duration="2181000" />
+      <workItem from="1545120720435" duration="4140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29075000" />
+    <option name="totallyTimeSpent" value="31034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
@@ -176,17 +179,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_mat_vect.cpp">
+    <entry file="file://$PROJECT_DIR$/vect_mat.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vect_mat.sh">
+    <entry file="file://$PROJECT_DIR$/main_mat_vect.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="210">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
         </state>
       </provider>
     </entry>
