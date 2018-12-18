@@ -58,9 +58,10 @@ int main(int argc, char **argv)
         }
     }
 
-    displayInt(lineVector, width);
-    displayInt(columnVector, height);
-    displayIntMat(matrix, width, height);
+    // affichage des donnees en entree pour les tests
+    // displayInt(lineVector, width);
+    // displayInt(columnVector, height);
+    // displayIntMat(matrix, width, height);
 
 	// produit d'un vecteur ligne par une matrice
     long *columnResult = new long[height];
@@ -69,8 +70,18 @@ int main(int argc, char **argv)
     high_resolution_clock::time_point end = high_resolution_clock::now();
     nanoseconds time_duration = duration_cast<nanoseconds>(end - start);
     std::cout << time_duration.count() << ",";
-    displayLong(columnResult, height);
+    // displayLong(columnResult, height);
     delete[] columnResult;
+
+    // produit d'une matrice par un vecteur colonne
+    long *lineResult = new long[width];
+    start = high_resolution_clock::now();
+    productMatColumnVect(matrix, columnVector, lineResult, width, height);
+    end = high_resolution_clock::now();
+    time_duration = duration_cast<nanoseconds>(end - start);
+    std::cout << time_duration.count() << std::endl;
+    // displayLong(lineResult, width);
+    delete[] lineResult;
 
     // liberation memoire
     delete[] lineVector;
@@ -95,7 +106,8 @@ void displayInt(int *vec, int length)
     std::cout << std::endl;
 }
 
-void displayLong(long *vec, int length) {
+void displayLong(long *vec, int length)
+{
     int i;
     for (i = 0; i < length; i++)
         std::cout << vec[i] << std::endl;
@@ -143,7 +155,8 @@ void productLineVectMat(int *vec, int **mat, long *ret, int width, int height)
     for (i = 0; i < height; i++)
     {
         ret[i] = 0;
-        #pragma omp parallel for reduction(+:ret[i])
+
+        #pragma omp parallel for reduction(+:ret[i]) shared(i, vec, mat, width) private(j)
         for (j = 0; j < width; j++)
         {
             ret[i] += vec[j] * mat[j][i];
@@ -153,5 +166,17 @@ void productLineVectMat(int *vec, int **mat, long *ret, int width, int height)
 
 void productMatColumnVect(int **mat, int *vec, long *ret, int width, int height)
 {
+    int i, j;
 
+    #pragma omp parallel for shared(ret, vec, mat, width, height) private(i, j)
+    for (i = 0; i < width; i++)
+    {
+        ret[i] = 0;
+
+        #pragma omp parallel for reduction(+:ret[i]) shared(i, vec, mat, height) private(j)
+        for (j = 0; j < height; j++)
+        {
+            ret[i] += vec[j] * mat[i][j];
+        }
+    }
 }
