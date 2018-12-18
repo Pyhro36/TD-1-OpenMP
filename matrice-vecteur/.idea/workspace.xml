@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="310a9385-097a-4ce4-9263-0d8b37104539" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.~lock.Rapport-TD1-OpenMP-pllefebvre.odt#" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_mat_vect.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1891">
-              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="359">
+              <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -75,7 +75,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1356" />
     <option name="height" value="741" />
   </component>
@@ -133,16 +133,15 @@
       <workItem from="1544432163452" duration="6559000" />
       <workItem from="1544447027348" duration="16322000" />
       <workItem from="1545117624262" duration="3011000" />
-      <workItem from="1545120720435" duration="5766000" />
+      <workItem from="1545120720435" duration="6423000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32660000" />
+    <option name="totallyTimeSpent" value="33317000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1366" height="741" extended-state="7" />
-    <editor active="true" />
+    <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26818183" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -187,8 +186,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_mat_vect.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1891">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="359">
+          <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="34" />
         </state>
       </provider>
     </entry>
