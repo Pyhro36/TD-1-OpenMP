@@ -10,10 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="310a9385-097a-4ce4-9263-0d8b37104539" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.resultats et graphes.ods#" beforeDir="false" afterPath="$PROJECT_DIR$/.~lock.resultats et graphes.ods#" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_mat_vect.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main_mat_vect.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resultats et graphes.ods" beforeDir="false" afterPath="$PROJECT_DIR$/resultats et graphes.ods" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,12 +133,12 @@
       <workItem from="1544432163452" duration="6559000" />
       <workItem from="1544447027348" duration="16322000" />
       <workItem from="1545117624262" duration="3011000" />
-      <workItem from="1545120720435" duration="5163000" />
+      <workItem from="1545120720435" duration="5766000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32057000" />
+    <option name="totallyTimeSpent" value="32660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="741" extended-state="7" />
