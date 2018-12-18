@@ -20,13 +20,12 @@ int main(int argc, char **argv)
     if (argc < 4)
     {
     	std::cout << "usage : app_name number_of_cores width height" << std::endl;
+    	exit(0);
     }
-    else
-    {
-	    coresNb = std::stoi(argv[1]);
-    	width = std::stoi(argv[2]);
-    	height = std::stoi(argv[3]);
-    }
+
+    coresNb = std::stoi(argv[1]);
+    width = std::stoi(argv[2]);
+    height = std::stoi(argv[3]);
 
      omp_set_num_threads(coresNb);
 

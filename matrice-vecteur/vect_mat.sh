@@ -1,31 +1,26 @@
 #!/bin/bash
 
 CORES=$1
-LENGTH=$2
-FILE=$3
+WIDTH=$2
+HEIGHT=$3
+FILE=$4
 
 iterations=10
-sumAddTime=0
-sumSumTime=0
-sumProductTime=0 
+productLineVectMatTimeSum=0
+productMatColumnVectTimeSum=0
 
 OLDIFS="$IFS"
 IFS=","
 
-printf "Temps avec " > $FILE
-printf $CORES >> $FILE
-printf " coeur(s) et des vecteurs de " >> $FILE
-printf $LENGTH >> $FILE
-echo " termes" >> $FILE  
-echo "Addition de deux vecteurs, Somme des termes d'un vecteur, Produit d'un vecteur par un scalaire" >> $FILE
+echo "Temps avec $CORES coeur(s) et des matrices de $WIDTH sur $HEIGHT" > $FILE
+echo "Produit d'un vecteur-ligne par une matrice,Produit d'une matrice par un vecteur-colonne" >> $FILE
 
 for ((i=0 ; iterations - $i ; i++))
 do
-	./out $CORES $LENGTH > tmpResult
-	read addTime sumTime productTime < tmpResult
-	let "sumAddTime=$sumAddTime + $addTime"
-	let "sumSumTime=$sumSumTime + $sumTime"
-	let "sumProductTime=$sumProductTime + $productTime"
+	./out $CORES $WIDTH $HEIGHT > tmpResult
+	read productLineVectMatTime productMatColumnVectTime < tmpResult
+	let "productLineVectMatTimeSum=$productLineVectMatTimeSum + $productLineVectMatTime"
+	let "productMatColumnVectTimeSum=$productMatColumnVectTimeSum + $productMatColumnVectTime"
 	cat tmpResult >> $FILE
 done
 
@@ -33,8 +28,6 @@ IFS="$OLDIFS"
 
 echo "Moyenne : " >> $FILE
 
-echo "scale=1;$sumAddTime/$iterations" | bc | tr -d "\n" >> $FILE
+echo "scale=1;$productLineVectMatTimeSum/$iterations" | bc | tr -d "\n" >> $FILE
 printf "," >> $FILE
-echo "scale=1;$sumSumTime/$iterations" | bc | tr -d "\n" >> $FILE
-printf "," >> $FILE
-echo "scale=1;$sumProductTime/$iterations" | bc | tr -d "\n" >> $FILE
+echo "scale=1;$productMatColumnVectTimeSum/$iterations" | bc | tr -d "\n" >> $FILE
