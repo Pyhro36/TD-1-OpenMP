@@ -12,68 +12,86 @@ using namespace std::chrono;
 
 int main(int argc, char **argv)
 {
-    int i;
+    int i, j;
 
     int coresNb = 1;
-    int columnsNb, linesNb;
+    int width, height;
 
-    if(argc < 4)
+    if (argc < 4)
     {
-    	std::cout<<"usage : app_name number_of_cores array_size"<<std::endl;
-    }
-    else
-    {
-	    coresNb = std::stoi(argv[1]);
-    	columnsNb = std::stoi(argv[2]);
-    	linesNb = std::stoi(argv[3]);
+    	std::cout << "usage : app_name number_of_cores width height" << std::endl;
+    	exit(0);
     }
 
-    // omp_set_num_threads(coresNb);
-    
-    int *vector1 = new int[nbMax];
-    int *vector2 = new int[nbMax];
+    coresNb = std::stoi(argv[1]);
+    width = std::stoi(argv[2]);
+    height = std::stoi(argv[3]);
 
+     omp_set_num_threads(coresNb);
+
+    // instanciation des matrice et vecteurs
+    int *lineVector = new int[width];
+    int *columnVector = new int[height];
+    int **matrix = new int*[width];
+
+    for (i = 0; i < width; i++)
+    {
+        matrix[i] = new int[height];
+    }
+
+    // remplissage des données aléatoires
     srand(time(NULL));
 
-    for (i = 0; i < nbMax; i++)
+    for (i = 0; i < height; i++)
     {
-        vector1[i] = rand();
-        vector2[i] = rand();
+        columnVector[i] = rand() % 1000 ;
     }
 
-    // displayInt(vector1, nbMax);
-    // displayInt(vector2, nbMax);
-    
-    long *result = new long[nbMax];
+    for (i = 0; i < width; i++)
+    {
+        lineVector[i] = rand() % 1000;
 
-	// addition des deux vecteurs
-    high_resolution_clock::time_point start = high_resolution_clock::now();
-    add(vector1, vector2, result, nbMax);
+        for (j = 0; j < height; j++)
+        {
+            matrix[i][j] = rand() % 1000 ;
+        }
+    }
+
+    // affichage des donnees en entree pour les tests
+    // displayInt(lineVector, width);
+    // displayInt(columnVector, height);
+    // displayIntMat(matrix, width, height);
+
+	// produit d'un vecteur ligne par une matrice
+    long *columnResult = new long[height];
+	high_resolution_clock::time_point start = high_resolution_clock::now();
+    productLineVectMat(lineVector, matrix, columnResult, width, height);
     high_resolution_clock::time_point end = high_resolution_clock::now();
     nanoseconds time_duration = duration_cast<nanoseconds>(end - start);
     std::cout << time_duration.count() << ",";
-    delete[] result;
+    // displayLong(columnResult, height);
+    delete[] columnResult;
 
-	// somme des termes du premier vecteur
-    high_resolution_clock::time_point sumStart = high_resolution_clock::now();
-    long sumResult = sum(vector1, nbMax);
-    high_resolution_clock::time_point sumEnd = high_resolution_clock::now();
-    time_duration = duration_cast<nanoseconds>(sumEnd - sumStart);
-    std::cout << time_duration.count() << ",";
-    
-    // produit du premier vecteur par un double
-    double *productResult = new double[nbMax];
-    double factor = (((double)rand()) / RAND_MAX) * 1000;
-    high_resolution_clock::time_point prodStart = high_resolution_clock::now();
-    product(vector1, factor, productResult, nbMax);
-    high_resolution_clock::time_point prodEnd = high_resolution_clock::now();
-    time_duration = duration_cast<nanoseconds>(prodEnd - prodStart);
+    // produit d'une matrice par un vecteur colonne
+    long *lineResult = new long[width];
+    start = high_resolution_clock::now();
+    productMatColumnVect(matrix, columnVector, lineResult, width, height);
+    end = high_resolution_clock::now();
+    time_duration = duration_cast<nanoseconds>(end - start);
     std::cout << time_duration.count() << std::endl;
-    
-    delete[] productResult;
-   
-    delete[] vector1;
-    delete[] vector2;
+    // displayLong(lineResult, width);
+    delete[] lineResult;
+
+    // liberation memoire
+    delete[] lineVector;
+    delete[] columnVector;
+
+    for (i = 0; i < width; i++)
+    {
+        delete[] matrix[i];
+    }
+
+    delete[] matrix;
 
     return 0;
 }
@@ -96,47 +114,68 @@ void displayLong(long *vec, int length)
     std::cout << std::endl;
 }
 
-void displayDouble(double *vec, int length)
+void displayIntMat(int **mat, int width, int height)
 {
-    int i;
-    for (i = 0; i < length; i++)
-        std::cout << vec[i] << std::endl;
+    int i, j;
+    for (i = 0; i < width; i++)
+    {
+        for (j = 0; j < height; j++)
+        {
+            std::cout << mat[i][j] << " ";
+        }
+
+        std::cout << std::endl;
+    }
 
     std::cout << std::endl;
 }
 
-long sum(int *vec, int length)
+void displayLongMat(long **mat, int width, int height)
 {
-    int i;
-    long sum = 0;
-    
-    #pragma omp parallel for reduction(+:sum)
-    for (i = 0; i < length; i++)
+    int i, j;
+    for (i = 0; i < width; i++)
     {
-        sum += vec[i];
+        for (j = 0; j < height; j++)
+        {
+            std::cout << mat[i][j] << " ";
+        }
+
+        std::cout << std::endl;
     }
 
-    return sum;
+    std::cout << std::endl;
 }
 
-void add(int *vec1, int *vec2, long *ret, int length)
+void productLineVectMat(int *vec, int **mat, long *ret, int width, int height)
 {
-    int i;
-    
-    #pragma omp parallel for shared(ret, vec1, vec2) 
-    for (i = 0; i < length; i++)
+    int i, j;
+
+    #pragma omp parallel for shared(ret, vec, mat, width, height) private(i, j)
+    for (i = 0; i < height; i++)
     {
-        ret[i] = vec1[i] + vec2[i];
+        ret[i] = 0;
+
+        #pragma omp parallel for reduction(+:ret[i]) shared(i, vec, mat, width) private(j)
+        for (j = 0; j < width; j++)
+        {
+            ret[i] += vec[j] * mat[j][i];
+        }
     }
 }
 
-void product(int *vec, double factor, double *ret, int length)
+void productMatColumnVect(int **mat, int *vec, long *ret, int width, int height)
 {
-    int i;
+    int i, j;
 
-    #pragma omp parallel for shared(factor, vec, ret)
-    for (i = 0; i < length; i++)
+    #pragma omp parallel for shared(ret, vec, mat, width, height) private(i, j)
+    for (i = 0; i < width; i++)
     {
-        ret[i] = factor * vec[i];
+        ret[i] = 0;
+
+        #pragma omp parallel for reduction(+:ret[i]) shared(i, vec, mat, height) private(j)
+        for (j = 0; j < height; j++)
+        {
+            ret[i] += vec[j] * mat[i][j];
+        }
     }
 }

@@ -9,7 +9,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="11ae0caa-5d05-40d6-905e-1aba091d6ac1" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="310a9385-097a-4ce4-9263-0d8b37104539" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.~lock.Rapport-TD1-OpenMP-pllefebvre.odt#" beforeDir="false" />
+    </list>
+>>>>>>> be11e42169b75d91d14711ef255acc0594e92375
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,14 +27,38 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_mat_vect.cpp">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="182">
               <caret line="84" column="41" lean-forward="true" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
+=======
+            <state relative-caret-position="359">
+              <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vect_mat.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_mat_vect.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+>>>>>>> be11e42169b75d91d14711ef255acc0594e92375
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -37,6 +67,37 @@
     <option name="y" value="94" />
     <option name="width" value="1922" />
     <option name="height" value="1053" />
+=======
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>columnsNb</find>
+      <find>linesNb</find>
+      <find>sumProductMatColumnVectTime</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>height</replace>
+      <replace>ProductLineVectMat</replace>
+      <replace>ProductMatColumnVect</replace>
+      <replace>productLineVectMatTimeSum</replace>
+      <replace>productMatColumnVectTimeSum</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/main_mat_vect.h" />
+        <option value="$PROJECT_DIR$/vect_mat.sh" />
+        <option value="$PROJECT_DIR$/main_mat_vect.cpp" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1356" />
+    <option name="height" value="741" />
+>>>>>>> be11e42169b75d91d14711ef255acc0594e92375
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -60,7 +121,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vecteur-vecteur" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
+>>>>>>> be11e42169b75d91d14711ef255acc0594e92375
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -79,6 +147,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="11ae0caa-5d05-40d6-905e-1aba091d6ac1" name="Default Changelist" comment="" />
       <created>1544400781033</created>
       <option name="number" value="Default" />
@@ -106,6 +175,29 @@
     <frame x="1279" y="94" width="1922" height="1053" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18729989" />
+=======
+      <changelist id="310a9385-097a-4ce4-9263-0d8b37104539" name="Default Changelist" comment="" />
+      <created>1544430878206</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544430878206</updated>
+      <workItem from="1544430893685" duration="437000" />
+      <workItem from="1544431452205" duration="565000" />
+      <workItem from="1544432163452" duration="6559000" />
+      <workItem from="1544447027348" duration="16322000" />
+      <workItem from="1545117624262" duration="3011000" />
+      <workItem from="1545120720435" duration="6423000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="33317000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26818183" />
+>>>>>>> be11e42169b75d91d14711ef255acc0594e92375
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -118,7 +210,11 @@
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Event Log" order="10" side_tool="true" visible="true" weight="0.32903227" />
+=======
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" visible="true" weight="0.19448946" />
+>>>>>>> be11e42169b75d91d14711ef255acc0594e92375
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -128,6 +224,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <MESSAGE value=".gitignore" />
     <option name="LAST_COMMIT_MESSAGE" value=".gitignore" />
@@ -142,6 +239,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="84" column="41" lean-forward="true" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
+=======
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main_mat_vect.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vect_mat.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vect_mat_4_coeurs_1_dataset.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_mat_vect.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="34" />
+>>>>>>> be11e42169b75d91d14711ef255acc0594e92375
         </state>
       </provider>
     </entry>
