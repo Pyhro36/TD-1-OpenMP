@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     n = std::stoi(argv[3]);
     p = std::stoi(argv[4]);
 
-    omp_set_num_threads(coresNb);
+    // omp_set_num_threads(coresNb);
 
     // instanciation des matrices
     int **matrix1 = new int*[m];
