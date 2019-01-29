@@ -1,3 +1,6 @@
 out
 tmpResult
 *.o
+matrice-vecteur/.idea/**
+vecteur-vecteur/.idea/**
+
