@@ -81,7 +81,7 @@ int main(int argc, char **argv)
     productMat(matrix1, matrix2, result, m, n, p);
     high_resolution_clock::time_point end = high_resolution_clock::now();
     nanoseconds time_duration = duration_cast<nanoseconds>(end - start);
-    std::cout << time_duration.count() << ",";
+    std::cout << time_duration.count();
 //    displayLongMat(result, m, p);
 
     // liberation memoire
