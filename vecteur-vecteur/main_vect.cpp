@@ -1,11 +1,14 @@
 #include "main_vect.h"
 
 #include <iostream>
+#include <chrono>
 #include <cstdlib>
 #include <ctime>
 #include <omp.h>
 
 #define NB_MAX 100
+
+using namespace std::chrono;
 
 int main(int argc, char **argv)
 {
@@ -38,19 +41,27 @@ int main(int argc, char **argv)
     }
 
     // affichage des vecteurs
-    displayInt(vector1, nbMax);
-    displayInt(vector2, nbMax);
+    // displayInt(vector1, nbMax);
+    // displayInt(vector2, nbMax);
 
     long *result = new long[nbMax];
 
     // addition des deux vecteurs
+    high_resolution_clock::time_point start = high_resolution_clock::now();
     add(vector1, vector2, result, nbMax);
-    displayLong(result, nbMax);
+    high_resolution_clock::time_point end = high_resolution_clock::now();
+    nanoseconds time_duration = duration_cast<nanoseconds>(end - start);
+    std::cout << "add time : " << time_duration.count() << std::endl;
+    // displayLong(result, nbMax);
     delete[] result;
 
     // somme des termes du premier vecteur
+    high_resolution_clock::time_point sumStart = high_resolution_clock::now();
     long sumResult = sum(vector1, nbMax);
-    std::cout << sumResult << std::endl << std::endl;
+    high_resolution_clock::time_point sumEnd = high_resolution_clock::now();
+    time_duration = duration_cast<nanoseconds>(sumEnd - sumStart);
+    std::cout << "sum time : " << time_duration.count() << std::endl;
+    // std::cout << sumResult << std::endl << std::endl;
 
     // liberation memoire
     delete[] vector1;
@@ -94,6 +105,7 @@ void add(int *vec1, int *vec2, long *ret, int length)
 {
     int i;
 
+    #pragma omp parallel for shared(ret, vec1, vec2)
     for (i = 0; i < length; i++)
     {
         ret[i] = (long)(vec1[i]) + (long)(vec2[i]);
