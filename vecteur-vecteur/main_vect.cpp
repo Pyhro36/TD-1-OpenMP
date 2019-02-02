@@ -63,6 +63,16 @@ int main(int argc, char **argv)
     std::cout << "sum time : " << time_duration.count() << std::endl;
     // std::cout << sumResult << std::endl << std::endl;
 
+    // produit du premier vecteur par un double
+    double *productResult = new double[nbMax];
+    double factor = (((double)rand()) / RAND_MAX) * 1000;
+    high_resolution_clock::time_point prodStart = high_resolution_clock::now();
+    product(vector1, factor, productResult, nbMax);
+    high_resolution_clock::time_point prodEnd = high_resolution_clock::now();
+    time_duration = duration_cast<nanoseconds>(prodEnd - prodStart);
+    std::cout << "product time : " << time_duration.count() << std::endl;
+    // displayDouble(productResult, nbMax);
+
     // liberation memoire
     delete[] vector1;
     delete[] vector2;
@@ -80,6 +90,15 @@ void displayInt(int *vec, int length)
 }
 
 void displayLong(long *vec, int length)
+{
+    int i;
+    for (i = 0; i < length; i++)
+        std::cout << vec[i] << std::endl;
+
+    std::cout << std::endl;
+}
+
+void displayDouble(double *vec, int length)
 {
     int i;
     for (i = 0; i < length; i++)
@@ -110,5 +129,16 @@ void add(int *vec1, int *vec2, long *ret, int length)
     for (i = 0; i < length; i++)
     {
         ret[i] = (long)(vec1[i]) + (long)(vec2[i]);
+    }
+}
+
+void product(int *vec, double factor, double *ret, int length)
+{
+    int i;
+
+    #pragma omp parallel for shared(factor, vec, ret)
+    for (i = 0; i < length; i++)
+    {
+        ret[i] = factor * vec[i];
     }
 }
