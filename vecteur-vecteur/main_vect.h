@@ -6,4 +6,15 @@
  */
 void displayInt(int *vec, int length);
 
+/**
+ * Affichage des termes d'un vecteur de long
+ */
+void displayLong(long *vec, int length);
+
+/**
+ * Somme de deux vecteurs, le vecteur ret doit etre initialise pour recevoir le resultat
+ */
+void add(int *vec1, int *vec2, long *ret, int length);
+
+
 #endif // MAIN_VECT_H

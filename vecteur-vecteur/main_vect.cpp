@@ -27,6 +27,13 @@ int main(int argc, char **argv)
     displayInt(vector1, NB_MAX);
     displayInt(vector2, NB_MAX);
 
+    long *result = new long[NB_MAX];
+
+    // addition des deux vecteurs
+    add(vector1, vector2, result, NB_MAX);
+    displayLong(result, NB_MAX);
+    delete[] result;
+
     // liberation memoire
     delete[] vector1;
     delete[] vector2;
@@ -41,4 +48,23 @@ void displayInt(int *vec, int length)
         std::cout << vec[i] << std::endl;
 
     std::cout << std::endl;
+}
+
+void displayLong(long *vec, int length)
+{
+    int i;
+    for (i = 0; i < length; i++)
+        std::cout << vec[i] << std::endl;
+
+    std::cout << std::endl;
+}
+
+void add(int *vec1, int *vec2, long *ret, int length)
+{
+    int i;
+
+    for (i = 0; i < length; i++)
+    {
+        ret[i] = (long)(vec1[i]) + (long)(vec2[i]);
+    }
 }
