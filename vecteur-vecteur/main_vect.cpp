@@ -34,6 +34,10 @@ int main(int argc, char **argv)
     displayLong(result, NB_MAX);
     delete[] result;
 
+    // somme des termes du premier vecteur
+    long sumResult = sum(vector1, NB_MAX);
+    std::cout << sumResult << std::endl << std::endl;
+
     // liberation memoire
     delete[] vector1;
     delete[] vector2;
@@ -57,6 +61,19 @@ void displayLong(long *vec, int length)
         std::cout << vec[i] << std::endl;
 
     std::cout << std::endl;
+}
+
+long sum(int *vec, int length)
+{
+    int i;
+    long sum = 0;
+
+    for (i = 0; i < length; i++)
+    {
+        sum += vec[i];
+    }
+
+    return sum;
 }
 
 void add(int *vec1, int *vec2, long *ret, int length)
