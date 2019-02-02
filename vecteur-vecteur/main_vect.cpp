@@ -93,6 +93,7 @@ long sum(int *vec, int length)
     int i;
     long sum = 0;
 
+    #pragma omp parallel for reduction(+:sum)
     for (i = 0; i < length; i++)
     {
         sum += vec[i];
