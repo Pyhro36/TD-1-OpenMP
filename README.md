@@ -5,4 +5,4 @@ Manipulation de Matrices et de Vecteurs avec OpenMP
 
 Dans vecteur-vecteur :
 
-`main_vect.cpp` contient le code correspondant à la question 2.1
+`main_vect.cpp` contient le code correspondant à la question 2.2
