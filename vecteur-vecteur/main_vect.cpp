@@ -1,15 +1,20 @@
 #include "main_vect.h"
 
+#include <cstdlib>
+#include <ctime>
+
 #define NB_MAX 100
 
 int main(int argc, char **argv)
 {
+    int i;
+
     int *vector1 = new int[NB_MAX];
     int *vector2 = new int[NB_MAX];
 
     srand(time(NULL));
 
-    for (i = 0; i < nbMax; i++)
+    for (i = 0; i < NB_MAX; i++)
     {
         vector1[i] = rand();
         vector2[i] = rand();
