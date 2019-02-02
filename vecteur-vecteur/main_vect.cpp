@@ -51,7 +51,7 @@ int main(int argc, char **argv)
     add(vector1, vector2, result, nbMax);
     high_resolution_clock::time_point end = high_resolution_clock::now();
     nanoseconds time_duration = duration_cast<nanoseconds>(end - start);
-    std::cout << "add time : " << time_duration.count() << std::endl;
+    std::cout << time_duration.count() << ",";
     // displayLong(result, nbMax);
     delete[] result;
 
@@ -60,7 +60,7 @@ int main(int argc, char **argv)
     long sumResult = sum(vector1, nbMax);
     high_resolution_clock::time_point sumEnd = high_resolution_clock::now();
     time_duration = duration_cast<nanoseconds>(sumEnd - sumStart);
-    std::cout << "sum time : " << time_duration.count() << std::endl;
+    std::cout << time_duration.count() << ",";
     // std::cout << sumResult << std::endl << std::endl;
 
     // produit du premier vecteur par un double
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
     product(vector1, factor, productResult, nbMax);
     high_resolution_clock::time_point prodEnd = high_resolution_clock::now();
     time_duration = duration_cast<nanoseconds>(prodEnd - prodStart);
-    std::cout << "product time : " << time_duration.count() << std::endl;
+    std::cout << time_duration.count() << std::endl;
     // displayDouble(productResult, nbMax);
 
     // liberation memoire
