@@ -3,39 +3,53 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <omp.h>
 
 #define NB_MAX 100
 
 int main(int argc, char **argv)
 {
-    int i;
+    int i, nbMax;
+    int nbCore = 1;
+
+    if(argc < 3)
+    {
+        std::cout << "usage : app_name number_of_cores array_size" << std::endl;
+    }
+    else
+    {
+        nbCore = std::stoi(argv[1]);
+        nbMax = std::stoi(argv[2]);
+    }
+
+    omp_set_num_threads(nbCore);
 
     // instanciation des vecteurs
-    int *vector1 = new int[NB_MAX];
-    int *vector2 = new int[NB_MAX];
+    int *vector1 = new int[nbMax];
+    int *vector2 = new int[nbMax];
 
     // remplissage des vecteurs
     srand(time(NULL));
 
-    for (i = 0; i < NB_MAX; i++)
+    for (i = 0; i < nbMax; i++)
     {
         vector1[i] = rand();
         vector2[i] = rand();
     }
 
     // affichage des vecteurs
-    displayInt(vector1, NB_MAX);
-    displayInt(vector2, NB_MAX);
+    displayInt(vector1, nbMax);
+    displayInt(vector2, nbMax);
 
-    long *result = new long[NB_MAX];
+    long *result = new long[nbMax];
 
     // addition des deux vecteurs
-    add(vector1, vector2, result, NB_MAX);
-    displayLong(result, NB_MAX);
+    add(vector1, vector2, result, nbMax);
+    displayLong(result, nbMax);
     delete[] result;
 
     // somme des termes du premier vecteur
-    long sumResult = sum(vector1, NB_MAX);
+    long sumResult = sum(vector1, nbMax);
     std::cout << sumResult << std::endl << std::endl;
 
     // liberation memoire
