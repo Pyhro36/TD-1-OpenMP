@@ -27,7 +27,7 @@ Les fichiers `vect_non_parallelise_1_dataset.csv` et `vect_n_coeurs_n_datasets.c
 
 Le document `resultats et graphes.ods` permet de générer les graphes de passage à l'échelle faible et fort à partir des résultats.
 
-## 1.2 Matrice-Vecteur
+## 2.2 Matrice-Vecteur
 
 Dans le dossier matrice-vecteur :
 
