@@ -25,7 +25,7 @@ int main(int argc, char **argv)
         nbMax = std::stoi(argv[2]);
     }
 
-    omp_set_num_threads(nbCore);
+    // omp_set_num_threads(nbCore);
 
     // instanciation des vecteurs
     int *vector1 = new int[nbMax];
