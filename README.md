@@ -9,7 +9,7 @@ Le code de l'application qui manipule les vecteurs (addition terme à terme, som
 Son header est le fichier `main_vect.h`.
 
 Pour le compiler, on a utilisé g++ :
-`$ g++ -std=c++11 -fopenmp -o out main_vect.cpp`
+`$ g++ -fopenmp -o out main_vect.cpp`
 sauf pour le cas où on veut tester le code séquentiellement, où dans ce cas la ligne 30 (`omp_set_num_threads(coresNb);`) est commentée et la compilation est faite sans l'option `-fopenmp`.
 
 Il en sort le fichier `out` qui est l'exécutable. 
