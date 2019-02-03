@@ -4,3 +4,4 @@ matrice-vecteur/.idea/**
 matrice-matrice/.idea/**
 vecteur-vecteur/.idea/**
 *.o
+.~lock.*
