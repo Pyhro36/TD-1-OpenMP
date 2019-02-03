@@ -1,8 +1,7 @@
 # TD-1-OpenMP
-
 Manipulation de Matrices et de Vecteurs avec OpenMP
 
-## 1.1 Vecteur-Vecteur
+## 2.1 Vecteur-Vecteur
 
 Dans le dossier vecteur-vecteur :
 
@@ -10,7 +9,7 @@ Le code de l'application qui manipule les vecteurs (addition terme à terme, som
 Son header est le fichier `main_vect.h`.
 
 Pour le compiler, on a utilisé g++ :
-`$ g++ -std=c++11 -fopenmp -o out main_vect.cpp`
+`$ g++ -fopenmp -o out main_vect.cpp`
 sauf pour le cas où on veut tester le code séquentiellement, où dans ce cas la ligne 30 (`omp_set_num_threads(coresNb);`) est commentée et la compilation est faite sans l'option `-fopenmp`.
 
 Il en sort le fichier `out` qui est l'exécutable. 
@@ -28,7 +27,7 @@ Les fichiers `vect_non_parallelise_1_dataset.csv` et `vect_n_coeurs_n_datasets.c
 
 Le document `resultats et graphes.ods` permet de générer les graphes de passage à l'échelle faible et fort à partir des résultats.
 
-## 1.2 Matrice-Vecteur
+## 2.2 Matrice-Vecteur
 
 Dans le dossier matrice-vecteur :
 
@@ -36,7 +35,7 @@ Le code de l'application qui manipule les mulitplications de vecteurs avec des m
 Son header est le fichier `main_vect_mat.h`.
 
 Pour le compiler, on a utilisé g++ :
-`$ g++ -std=c++11 -fopenmp -o out main_vect_mat.cpp`
+`$ g++ -fopenmp -o out main_vect_mat.cpp`
 sauf pour le cas où on veut tester le code séquentiellement, où dans ce cas la ligne 30 (`omp_set_num_threads(coresNb);`) est commentée et la compilation est faite sans l'option `-fopenmp`.
 
 Il en sort le fichier out qui est l'exécutable. 
@@ -54,7 +53,7 @@ Les fichiers `vect_mat_non_parallelise_1_dataset.csv` et `vect_mat_n_coeurs_n_da
 
 Le document `resultats et graphes.ods` permet de générer les graphes de passage à l'échelle faible et fort à partir des résultats
 
-## 1.2 Matrice-Vecteur
+## 2.3 Matrice-Matrice
 
 Dans le dossier matrice-matrice :
 
@@ -62,7 +61,7 @@ Le code de l'application qui manipule les mulitplications de matrices est le fic
 Son header est le fichier `main_vect_mat.h`.
 
 Pour le compiler, on a utilisé g++ :
-`$ g++ -std=c++11 -fopenmp -o out main_mat.cpp`
+`$ g++ -fopenmp -o out main_mat.cpp`
 sauf pour le cas où on veut tester le code séquentiellement, où dans ce cas la ligne 31 (`omp_set_num_threads(coresNb);`) est commentée et la compilation est faite sans l'option `-fopenmp`.
 
 Il en sort le fichier `out` qui est l'exécutable. 
@@ -84,4 +83,4 @@ Le document `resultats et graphes.ods` permet de générer les graphes de passag
 
 Le document `Rapport-TD1-OpenMP-pllefebvre.{odt|pdf}` est le rendu final, avec tous les graphes et les éléments d'analyse qui en découlent.
 
-La totalité du TP peut être retrouvée sur le GitHub public : https://github.com/Pyhro36/TD-1-OpenMP 
+La totalité du TP peut être retrouvée sur le GitHub public : https://github.com/Pyhro36/TD-1-OpenMP.
